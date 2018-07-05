@@ -8,7 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '115401d9d36848d3efafb63ea186b3f16cb613fca6085e68b16429a74097542ddc6a61adde05e8f8eb0d2e5176682fde482d1d8557092b253b0ecdeb5663fb35'
+  # config.secret_key = 'faaeb97eb220b58fa27345825617018ab74396cc4a9fe7a5b8a3b9a5d637e492694078704d957008da6c4336ee3461e8a8edcd81093fcaa27b91b735e9de7bd4'
   
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -114,7 +114,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'eebcd70e93f66ba64164a32bd3f7d7a92e9f5397a9b44c9dccbde0609f8d630ecbaa261286bc50354fa2f302487b29617a66b2ef427fa56076d4f7303b229090'
+  # config.pepper = '5f67573259edca880b55e714920778181be1223fde6042745bb9dd6fee841b31bef08b812cf3e2a2c2a42b26b2853d90a975a04b843a486a91ad0057fdb8d546'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -257,12 +257,10 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
   config.omniauth :facebook,
   ENV['FACEBOOK_APP_ID'],
   ENV['FACEBOOK_APP_SECRET'],
   callback_url:  "https://robotsim.herokuapp.com/users/auth/facebook/callback"
-
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
@@ -285,4 +283,5 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  config.secret_key = ENV['DEVISE_SECRET_KEY'] if Rails.env.production?
 end
