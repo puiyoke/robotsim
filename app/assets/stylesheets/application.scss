@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+ #image {
+    position: relative;
+    cursor:move;
+  }
+  #img {
+    position:absolute
+  }
+
+  #crate {
+    margin: 150px 0 0 250px;
+  }
+  #container {
+    width: 700px;
+    height: 450px;
+    border: 5px solid green;
+    top: 50%;
+    left: 50%;
+    margin: 30px 0 0 250px;
+  }
+  #button{
+      display: flex;
+  }
