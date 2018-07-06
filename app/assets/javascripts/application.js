@@ -49,7 +49,7 @@ $(document).ready(function() {
         var Y = $("#robot").offset().top;
         var X = $("#robot").offset().left;
         $('#coord').text('X: ' + X + ' ' + 'Y: ' + Y);
-        if (Y >= -30 && Y<= 140 && X<=270 && X >=160){
+        if (Y >= -30 && Y<= 140 && X<=270 && X >=140){
             $('#robot').animate({top:'-=40px'});
             $('#coord').text('X: ' + X + ' ' + 'Y: ' + Y);
         }
