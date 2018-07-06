@@ -15,23 +15,40 @@
 //= require turbolinks
 //= require_tree .
 
+var coordinates = function(element) {
+    element = $('#robot');
+    var top = element.offset().top;
+    var left = element.offset().left;
+    $('#coord').text('X: ' + left + ' ' + 'Y: ' + top);
+}
+
 $(document).ready(function() {
     $('#east').click(function() {
-        $('#image').animate({left:'+=50px'});
+        $('#robot').animate({marginLeft:'+=30px'});
+        coordinates();
     });
     $('#west').click(function() {
-        $('#image').animate({left:'-=50px'});
+        $('#robot').animate({marginLeft:'-=30px'});
+        coordinates();
     });
     $('#south').click(function() {
-        $('#image').animate({top:'+=50px'});
+        $('#robot').animate({top:'+=30px'});
+        coordinates();
     });
     $('#north').click(function() {
-        $('#image').animate({top:'-=50px'});
+        $('#robot').animate({top:'-=30px'});
+        coordinates();
     });
 
     //drag robot
-    $( function() {
-        $( "#image" ).draggable();
-      } );
+    $('#robot').draggable({
+        start: function() {
+            coordinates('#robot');
+        },
+        stop: function() {
+            coordinates('#robot');
+        }
+    });
 
 });
+

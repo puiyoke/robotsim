@@ -13,16 +13,21 @@
  *= require_tree .
  *= require_self
  */
- #image {
+ #robot {
     position: relative;
     cursor:move;
+    width: 100px;
+    height: 100px;
   }
   #img {
-    position:absolute
+    position:absolute;
+    margin: 50px 0 0 50px;
   }
 
   #crate {
-    margin: 150px 0 0 250px;
+    margin: 100px 0 100px 250px;
+    width: 100px;
+    height: 100px;
   }
   #container {
     width: 700px;
